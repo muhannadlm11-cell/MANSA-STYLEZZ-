@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MANSA STYLEZZ | Premium Men's Kaftan Tailoring</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+/* Global styles */
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #000;
+    color: #fff;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* Sticky Navigation Bar */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    z-index: 1000;
+    box-sizing: border-box;
+    border-bottom: 1px solid #333;
+}
+
+nav .logo {
+    font-weight: 700;
+    font-size: 1.5em;
+    color: #FFD700;
+    letter-spacing: 2px;
+}
+
+nav .links {
+    display: flex;
+    gap: 20px;
+}
+
+nav .links a {
+    font-size: 0.9em;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+nav .links a:hover {
+    color: #FFD700;
+}
+
+/* Hero Section */
+header {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/hero.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+header h1, header p, header .btn-group {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+header p { animation-delay: 0.3s; }
+header .btn-group { animation-delay: 0.6s; margin-top: 20px;}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header h1 {
+    font-size: 4.5em;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin: 0;
+    color: #FFD700;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+}
+
+header p {
+    font-size: 1.5em;
+    font-weight: 300;
+    margin: 10px 0 20px;
+    color: #e0e0e0;
+}
+
+/* Buttons */
+button {
+    background-color: #FFD700;
+    color: #000;
+    border: none;
+    padding: 15px 35px;
+    font-size: 1.1em;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+}
+
+button.outline-btn {
+    background-color: transparent;
+    color: #FFD700;
+    border: 2px solid #FFD700;
+    box-shadow: none;
+}
+
+button.outline-btn:hover {
+    background-color: #FFD700;
+    color: #000;
+}
+
+/* Sections */
+section {
+    padding: 80px 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Alternating Background Colors */
+section:nth-child(even) { background-color: #111; }
+section:nth-child(odd) { background-color: #050505; }
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section h2 {
+    font-size: 2.8em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #FFD700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+section p.subtitle {
+    font-size: 1.2em;
+    color: #ccc;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+}
+
+/* Welcome Note Specifics */
+#welcome {
+    background-color: #1a1a1a;
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+}
+
+#welcome p {
+    font-size: 1.3em;
+    font-weight: 300;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.8;
+    color: #e0e0e0;
+}
+
+/* Responsive Gallery using CSS Grid */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    background-color: #222; /* Fallback color if image is missing */
+}
+
+.gallery img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
+}
+
+/* Why Choose Us */
+.bullets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.bullet-item {
+    background: #1a1a1a;
+    padding: 20px 30px;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: 600;
+    border: 1px solid #333;
+    flex: 1 1 200px;
+    transition: 0.3s;
+}
+
+.bullet-item:hover {
+    border-color: #FFD700;
+    color: #FFD700;
+}
+
+/* Contact */
+.contact-info {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+}
+
+.whatsapp-btn {
+    background-color: #25D366 !important;
+    color: #fff !important;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3) !important;
+}
+
+.whatsapp-btn:hover {
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6) !important;
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+    border-top: 1px solid #222;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    header h1 { font-size: 3em; }
+    nav { flex-direction: column; padding: 10px; gap: 10px; }
+    nav .links { flex-wrap: wrap; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">MANSA</div>
+    <div class="links">
+        <a href="#welcome">Welcome</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Designs</a>
+        <a href="#luxury">Luxury</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<header>
+    <h1>MANSA STYLEZZ</h1>
+    <p>Premium Men's Kaftan Tailoring<br>Modern Elegance. Perfect Fit.</p>
+    <div class="btn-group">
+        <button class="whatsapp-btn" onclick="window.location.href='https://wa.me/2347068655149'">Chat on WhatsApp</button>
+        <button class="outline-btn" onclick="document.getElementById('luxury').scrollIntoView({ behavior: 'smooth' });">View Luxury Kaftans</button>
+    </div>
+</header>
+
+<section id="welcome">
+    <h2>Welcome to Elegance</h2>
+    <p>Welcome to MANSA STYLEZZ. We believe that true elegance lies in the details. Whether you are dressing for a special occasion or elevating your everyday look, our bespoke kaftans are tailored to reflect your unique personality and heritage. Step into a world of premium craftsmanship, clean finishing, and unmatched style.</p>
+</section>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p class="subtitle">Redefining modern African menswear through precision tailoring and innovative designs.</p>
+    <p style="max-width: 800px; margin: 0 auto; line-height: 1.6; color: #ccc;">MANSA STYLEZZ specializes in modern men's kaftan designs crafted with precision. We focus on achieving the perfect fit and creating stylish embroidery that sets you apart from the crowd. Every stitch is a testament to our dedication to quality.</p>
+</section>
+
+<section id="gallery">
+    <h2>Our Signature Designs</h2>
+    <div class="gallery">
+        <img src="images/design1.jpg" alt="Kaftan Design 1">
+        <img src="images/design2.jpg" alt="Kaftan Design 2">
+        <img src="images/design3.jpg" alt="Kaftan Design 3">
+        <img src="images/design4.jpg" alt="Kaftan Design 4">
+        <img src="images/design5.jpg" alt="Kaftan Design 5">
+        <img src="images/design6.jpg" alt="Kaftan Design 6">
+    </div>
+</section>
+
+<section id="luxury">
+    <h2>The Luxury Collection</h2>
+    <p class="subtitle">Exclusive fabrics and intricate embroidery for the modern gentleman.</p>
+    <div class="gallery">
+        <img src="images/lux1.jpg" alt="Luxury Kaftan 1">
+        <img src="images/lux2.jpg" alt="Luxury Kaftan 2">
+        <img src="images/lux3.jpg" alt="Luxury Kaftan 3">
+    </div>
+</section>
+
+<section id="why">
+    <h2>Why Choose Us</h2>
+    <div class="bullets">
+        <div class="bullet-item">📐 Perfect Fitting</div>
+        <div class="bullet-item">🧵 Premium Fabrics</div>
+        <div class="bullet-item">👑 Modern & Traditional Styles</div>
+        <div class="bullet-item">✨ Attention to Detail</div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact & Location</h2>
+    <div class="contact-info">
+        <p>📍 Location: Kano, Nigeria</p>
+        <p>📞 Phone: +234 7068655149</p>
+    </div>
+    <button class="whatsapp-btn" onclick="window.location.href='https://wa.me/2347068655149'">Book Your Fitting on WhatsApp</button>
+</section>
+
+<footer>
+    <p>© 2026 MANSA STYLEZZ. Tailored to perfection. All Rights Reserved.</p>
+</footer>
+
+<script>
+// Scroll Fade-In Sections Logic
+const sections = document.querySelectorAll('section');
+window.addEventListener('scroll', () => {
+    sections.forEach(section => {
+        const top = section.getBoundingClientRect().top;
+        const trigger = window.innerHeight * 0.85; // slightly adjusted trigger point
+        if(top < trigger) {
+            section.classList.add('visible');
+        }
+    });
+});
+
+// Trigger scroll animation once on page load for elements already in view
+window.dispatchEvent(new Event('scroll'));
+</script>
+
+</body>
+  </html>
+  
