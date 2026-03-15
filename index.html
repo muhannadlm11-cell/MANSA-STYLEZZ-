@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MANSA STYLEZZ | Premium Men's Kaftan Tailoring</title>
+<title>MANSA STYLEZ | Premium Tailoring</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
 /* Global styles */
@@ -28,17 +28,19 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 50px;
+    padding: 10px 50px;
     z-index: 1000;
     box-sizing: border-box;
     border-bottom: 1px solid #333;
 }
 
-nav .logo {
-    font-weight: 700;
-    font-size: 1.5em;
-    color: #FFD700;
-    letter-spacing: 2px;
+/* Logo Image Styling */
+nav .logo img {
+    height: 50px; /* Adjust this to make your logo bigger or smaller */
+    width: auto;
+    border-radius: 5px; /* Optional: gives a slight rounding to the edges */
+    background-color: #fff; /* Adds a white background if your logo needs it to pop against the black nav */
+    padding: 2px;
 }
 
 nav .links {
@@ -100,6 +102,7 @@ header p {
     font-weight: 300;
     margin: 10px 0 20px;
     color: #e0e0e0;
+    font-style: italic;
 }
 
 /* Buttons */
@@ -143,7 +146,6 @@ section {
     transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-/* Alternating Background Colors */
 section:nth-child(even) { background-color: #111; }
 section:nth-child(odd) { background-color: #050505; }
 
@@ -201,12 +203,27 @@ section p.subtitle {
     object-fit: cover;
     border-radius: 8px;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-    background-color: #222; /* Fallback color if image is missing */
+    background-color: #222;
 }
 
 .gallery img:hover {
     transform: scale(1.03);
     box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
+}
+
+/* Video Wrapper */
+.video-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+}
+
+.video-wrapper video {
+    width: 100%;
+    display: block;
 }
 
 /* Why Choose Us */
@@ -238,8 +255,14 @@ section p.subtitle {
 
 /* Contact */
 .contact-info {
-    font-size: 1.3em;
+    font-size: 1.2em;
     margin-bottom: 30px;
+    line-height: 1.8;
+    color: #ddd;
+}
+
+.contact-info p {
+    margin: 10px 0;
 }
 
 .whatsapp-btn {
@@ -273,55 +296,58 @@ footer {
 <body>
 
 <nav>
-    <div class="logo">MANSA</div>
+    <div class="logo">
+        <a href="#"><img src="images/logo.jpg" alt="MANSA STYLEZ Logo"></a>
+    </div>
     <div class="links">
         <a href="#welcome">Welcome</a>
         <a href="#about">About</a>
         <a href="#gallery">Designs</a>
-        <a href="#luxury">Luxury</a>
+        <a href="#video-showcase">Showcase</a>
         <a href="#contact">Contact</a>
     </div>
 </nav>
 
 <header>
-    <h1>MANSA STYLEZZ</h1>
-    <p>Premium Men's Kaftan Tailoring<br>Modern Elegance. Perfect Fit.</p>
+    <h1>MANSA STYLEZ</h1>
+    <p>"... Be exclusive, be unique, be yourself"</p>
     <div class="btn-group">
         <button class="whatsapp-btn" onclick="window.location.href='https://wa.me/2347068655149'">Chat on WhatsApp</button>
-        <button class="outline-btn" onclick="document.getElementById('luxury').scrollIntoView({ behavior: 'smooth' });">View Luxury Kaftans</button>
+        <button class="outline-btn" onclick="document.getElementById('video-showcase').scrollIntoView({ behavior: 'smooth' });">Watch Our Craft</button>
     </div>
 </header>
 
 <section id="welcome">
     <h2>Welcome to Elegance</h2>
-    <p>Welcome to MANSA STYLEZZ. We believe that true elegance lies in the details. Whether you are dressing for a special occasion or elevating your everyday look, our bespoke kaftans are tailored to reflect your unique personality and heritage. Step into a world of premium craftsmanship, clean finishing, and unmatched style.</p>
+    <p>Welcome to MANSA STYLEZ. We believe that true elegance lies in the details. Whether you are dressing for a special occasion or elevating your everyday look, our bespoke tailoring is designed to reflect your unique personality and heritage. Step into a world of premium craftsmanship, clean finishing, and unmatched style.</p>
 </section>
 
 <section id="about">
     <h2>About Us</h2>
-    <p class="subtitle">Redefining modern African menswear through precision tailoring and innovative designs.</p>
-    <p style="max-width: 800px; margin: 0 auto; line-height: 1.6; color: #ccc;">MANSA STYLEZZ specializes in modern men's kaftan designs crafted with precision. We focus on achieving the perfect fit and creating stylish embroidery that sets you apart from the crowd. Every stitch is a testament to our dedication to quality.</p>
+    <p class="subtitle">We specialize in sewing all types of Kaftan, Jallabiya, Trouser Suite, Senator, Jacket & Other Attires.</p>
+    <p style="max-width: 800px; margin: 0 auto; line-height: 1.6; color: #ccc;">MANSA STYLEZ focuses on achieving the perfect fit and creating stylish embroidery that sets you apart from the crowd. Every stitch is a testament to our dedication to quality and modern African menswear.</p>
 </section>
 
 <section id="gallery">
     <h2>Our Signature Designs</h2>
     <div class="gallery">
-        <img src="images/design1.jpg" alt="Kaftan Design 1">
-        <img src="images/design2.jpg" alt="Kaftan Design 2">
-        <img src="images/design3.jpg" alt="Kaftan Design 3">
-        <img src="images/design4.jpg" alt="Kaftan Design 4">
-        <img src="images/design5.jpg" alt="Kaftan Design 5">
-        <img src="images/design6.jpg" alt="Kaftan Design 6">
+        <img src="images/design1.jpg" alt="Tailored Design 1">
+        <img src="images/design2.jpg" alt="Tailored Design 2">
+        <img src="images/design3.jpg" alt="Tailored Design 3">
+        <img src="images/design4.jpg" alt="Tailored Design 4">
+        <img src="images/design5.jpg" alt="Tailored Design 5">
+        <img src="images/design6.jpg" alt="Tailored Design 6">
     </div>
 </section>
 
-<section id="luxury">
-    <h2>The Luxury Collection</h2>
-    <p class="subtitle">Exclusive fabrics and intricate embroidery for the modern gentleman.</p>
-    <div class="gallery">
-        <img src="images/lux1.jpg" alt="Luxury Kaftan 1">
-        <img src="images/lux2.jpg" alt="Luxury Kaftan 2">
-        <img src="images/lux3.jpg" alt="Luxury Kaftan 3">
+<section id="video-showcase">
+    <h2>Cinematic Showcase</h2>
+    <p class="subtitle">Experience the craftsmanship and elegance of MANSA STYLEZ in motion.</p>
+    <div class="video-wrapper">
+        <video autoplay loop muted playsinline>
+            <source src="images/promo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 </section>
 
@@ -338,14 +364,16 @@ footer {
 <section id="contact">
     <h2>Contact & Location</h2>
     <div class="contact-info">
-        <p>📍 Location: Kano, Nigeria</p>
-        <p>📞 Phone: +234 7068655149</p>
+        <p>📍 <strong>Address:</strong> No. 85c Tarauni Kano State, Nigeria.</p>
+        <p>📞 <strong>Call:</strong> <a href="tel:+2348125616443">08125616443</a></p>
+        <p>💬 <strong>WhatsApp:</strong> <a href="https://wa.me/2347068655149">07068655149</a></p>
+        <p>✉️ <strong>Email:</strong> <a href="mailto:mansursuleiman4@gmail.com">mansursuleiman4@gmail.com</a></p>
     </div>
     <button class="whatsapp-btn" onclick="window.location.href='https://wa.me/2347068655149'">Book Your Fitting on WhatsApp</button>
 </section>
 
 <footer>
-    <p>© 2026 MANSA STYLEZZ. Tailored to perfection. All Rights Reserved.</p>
+    <p>© 2026 MANSA STYLEZ. Be exclusive, be unique, be yourself. All Rights Reserved.</p>
 </footer>
 
 <script>
@@ -354,17 +382,14 @@ const sections = document.querySelectorAll('section');
 window.addEventListener('scroll', () => {
     sections.forEach(section => {
         const top = section.getBoundingClientRect().top;
-        const trigger = window.innerHeight * 0.85; // slightly adjusted trigger point
+        const trigger = window.innerHeight * 0.85;
         if(top < trigger) {
             section.classList.add('visible');
         }
     });
 });
-
-// Trigger scroll animation once on page load for elements already in view
 window.dispatchEvent(new Event('scroll'));
 </script>
 
 </body>
-  </html>
-  
+</html>
