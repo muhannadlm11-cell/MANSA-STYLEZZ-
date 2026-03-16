@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MANSA STYLEZ | Pricing & Styles</title>
+<title>MANSA STYLEZ | Collections</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
     body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: #000; color: #fff; text-align: center; padding: 50px 20px; }
     h1 { color: #FFD700; margin-bottom: 10px; font-weight: 700; letter-spacing: 2px;}
     p.subtitle { font-size: 1.1em; color: #ccc; max-width: 600px; margin: 0 auto 40px auto; line-height: 1.6; }
     
-    /* Product Grid Layout */
-    .price-grid {
+    /* Category Grid Layout */
+    .category-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 30px;
@@ -19,125 +19,70 @@
         margin: 0 auto;
     }
 
-    /* Individual Product Card */
-    .price-card {
+    /* Category Cards that act as big buttons */
+    .category-card {
         background-color: #0a0a0a;
-        border: 1px solid #333;
+        border: 2px solid #333;
         border-radius: 12px;
         overflow: hidden;
+        cursor: pointer;
         transition: transform 0.3s ease, border-color 0.3s ease;
     }
 
-    .price-card:hover {
+    .category-card:hover {
         transform: translateY(-5px);
         border-color: #FFD700;
-        box-shadow: 0 10px 25px rgba(255, 215, 0, 0.15);
+        box-shadow: 0 10px 25px rgba(255, 215, 0, 0.2);
     }
 
-    /* Product Image inside the card */
-    .price-card img {
+    .category-card img {
         width: 100%;
-        height: 350px;
+        height: 300px;
         object-fit: cover;
         border-bottom: 2px solid #333;
+        transition: opacity 0.3s;
     }
 
-    /* Text info inside the card */
-    .price-info {
-        padding: 20px;
-        text-align: left;
-    }
+    .category-card:hover img { opacity: 0.8; }
 
-    .price-info h3 {
-        margin: 0 0 10px 0;
-        color: #FFD700;
-        font-size: 1.4em;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    .price-info .price {
-        font-size: 1.3em;
-        font-weight: 700;
-        color: #fff;
-        margin: 0 0 10px 0;
-    }
-
-    .price-info .desc {
-        font-size: 0.9em;
-        color: #aaa;
-        line-height: 1.5;
+    .category-card h3 {
         margin: 0;
-    }
-
-    /* Small Order Button inside the card */
-    .order-btn {
-        background-color: #FFD700;
-        color: #000;
-        width: 100%;
-        margin-top: 15px;
-        padding: 12px;
-        border: none;
-        font-size: 1em;
-        font-weight: 700;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: 0.3s;
+        padding: 20px;
+        color: #FFD700;
+        font-size: 1.5em;
         text-transform: uppercase;
+        letter-spacing: 2px;
     }
 
-    .order-btn:hover { background-color: #e6c200; }
-
-    /* Go Back Button */
     .back-btn { background-color: transparent; color: #FFD700; border: 2px solid #FFD700; padding: 15px 35px; font-size: 1.1em; font-weight: 600; border-radius: 5px; cursor: pointer; margin-top: 50px; transition: 0.3s; }
     .back-btn:hover { background-color: #FFD700; color: #000; }
 </style>
 </head>
 <body>
 
-    <h1>Our Pricing</h1>
-    <p class="subtitle">Premium craftsmanship tailored to your exact measurements. Prices may vary slightly based on fabric choice and embroidery details.</p>
+    <h1>Our Collections</h1>
+    <p class="subtitle">Select a style below to view our exclusive designs and starting prices.</p>
 
-    <div class="price-grid">
+    <div class="category-grid">
         
-        <div class="price-card">
-            <img src="images/design1.jpg" alt="Premium Kaftan">
-            <div class="price-info">
-                <h3>Premium Kaftan</h3>
-                <p class="price">Starting at ₦35,000</p>
-                <p class="desc">Expertly tailored top and trousers with custom embroidery.</p>
-                <button class="order-btn" onclick="window.location.href='order.html'">Order This Style</button>
-            </div>
+        <div class="category-card" onclick="window.location.href='kaftan.html'">
+            <img src="images/design1.jpg" alt="Kaftans">
+            <h3>Kaftans</h3>
         </div>
 
-        <div class="price-card">
-            <img src="images/design2.jpg" alt="Senator Suit">
-            <div class="price-info">
-                <h3>Senator Suit</h3>
-                <p class="price">Starting at ₦40,000</p>
-                <p class="desc">Sleek, modern fit with clean finishing and premium fabric.</p>
-                <button class="order-btn" onclick="window.location.href='order.html'">Order This Style</button>
-            </div>
-        </div>
-
-        <div class="price-card">
+        <div class="category-card" onclick="window.location.href='jallabiya.html'">
             <img src="images/design3.jpg" alt="Jallabiya">
-            <div class="price-info">
-                <h3>Jallabiya</h3>
-                <p class="price">Starting at ₦30,000</p>
-                <p class="desc">Elegant, free-flowing traditional wear with detailed stitching.</p>
-                <button class="order-btn" onclick="window.location.href='order.html'">Order This Style</button>
-            </div>
+            <h3>Jallabiya</h3>
         </div>
 
-        <div class="price-card">
-            <img src="images/design4.jpg" alt="Two-Piece Suit">
-            <div class="price-info">
-                <h3>Two-Piece Suit</h3>
-                <p class="price">Starting at ₦55,000</p>
-                <p class="desc">Corporate and event-ready blazers and trousers fitted to perfection.</p>
-                <button class="order-btn" onclick="window.location.href='order.html'">Order This Style</button>
-            </div>
+        <div class="category-card" onclick="window.location.href='babban_riga.html'">
+            <img src="images/design4.jpg" alt="Babban Riga">
+            <h3>Babban Riga</h3>
+        </div>
+
+        <div class="category-card" onclick="window.location.href='senator.html'">
+            <img src="images/design2.jpg" alt="Senator Suits">
+            <h3>Senator Suits</h3>
         </div>
 
     </div>
