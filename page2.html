@@ -3,22 +3,70 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MANSA STYLEZ | Measurement Guide</title>
+<title>MANSA STYLEZ | Premium Textiles</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
     body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: #000; color: #fff; text-align: center; padding: 50px 20px; }
-    h1 { color: #FFD700; margin-bottom: 20px;}
-    p { font-size: 1.2em; line-height: 1.6; color: #ccc; max-width: 600px; margin: 0 auto; }
-    button { background-color: transparent; color: #FFD700; border: 2px solid #FFD700; padding: 15px 35px; font-size: 1.1em; font-weight: 600; border-radius: 5px; cursor: pointer; margin-top: 40px; transition: 0.3s; }
-    button:hover { background-color: #FFD700; color: #000; }
-    img { max-width: 100%; height: auto; max-height: 450px; border-radius: 12px; margin-bottom: 25px; object-fit: cover; border: 1px solid #333; box-shadow: 0 10px 25px rgba(255, 215, 0, 0.2); }
+    h1 { color: #FFD700; margin-bottom: 10px; font-weight: 700; letter-spacing: 2px;}
+    p.subtitle { font-size: 1.1em; color: #ccc; max-width: 600px; margin: 0 auto 40px auto; line-height: 1.6; }
+    
+    .fabric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto; perspective: 1000px; }
+    
+    .fabric-card { background-color: #0a0a0a; border: 1px solid #333; border-radius: 12px; transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.5s; transform-style: preserve-3d; }
+    .fabric-card:hover { transform: rotateX(5deg) rotateY(-2deg) scale(1.02); border-color: #FFD700; box-shadow: 0 15px 35px rgba(255, 215, 0, 0.15); z-index: 10; }
+    
+    .fabric-card img { width: 100%; height: 250px; object-fit: cover; border-top-left-radius: 12px; border-top-right-radius: 12px; border-bottom: 2px solid #333; }
+    
+    .fabric-info { padding: 20px; text-align: left; }
+    .fabric-info h3 { margin: 0 0 10px 0; color: #FFD700; font-size: 1.3em; text-transform: uppercase; }
+    .fabric-info p.desc { font-size: 0.95em; color: #aaa; line-height: 1.5; margin: 0; }
+    
+    .back-btn { background-color: transparent; color: #FFD700; border: 2px solid #FFD700; padding: 15px 35px; font-size: 1.1em; font-weight: 600; border-radius: 5px; cursor: pointer; margin-top: 50px; transition: 0.3s; }
+    .back-btn:hover { background-color: #FFD700; color: #000; }
 </style>
 </head>
 <body>
-    <h1>Measurement Guide</h1>
-    <img src="images/design1.jpg" alt="Tailoring Measurement">
-    
-    <p>This page will show clients exactly how to take their measurements for the perfect kaftan fit. We can add text, diagrams, or a video here later!</p>
-    <button onclick="window.location.href='index.html'">Go Back Home</button>
+
+    <h1>Premium Textiles</h1>
+    <p class="subtitle">We source only the finest fabrics. Choose your material, and let us bring your vision to life.</p>
+
+    <div class="fabric-grid">
+        
+        <div class="fabric-card">
+            <img src="images/fabric1.jpg" alt="Premium Cashmere">
+            <div class="fabric-info">
+                <h3>Premium Cashmere</h3>
+                <p class="desc">Soft, breathable, and highly durable. The absolute best choice for a flawless, sharp Senator suit.</p>
+            </div>
+        </div>
+
+        <div class="fabric-card">
+            <img src="images/fabric2.jpg" alt="Swiss Atiku / Shadda">
+            <div class="fabric-info">
+                <h3>Swiss Atiku (Shadda)</h3>
+                <p class="desc">Crisp and royal. Perfect for crafting a standalone Babban Riga that holds its structure perfectly.</p>
+            </div>
+        </div>
+
+        <div class="fabric-card">
+            <img src="images/fabric3.jpg" alt="High-Grade Damask">
+            <div class="fabric-info">
+                <h3>High-Grade Damask</h3>
+                <p class="desc">Richly patterned and heavy. Ideal for traditional ceremonies, weddings, and grand occasions.</p>
+            </div>
+        </div>
+
+        <div class="fabric-card">
+            <img src="images/fabric4.jpg" alt="Italian Wool">
+            <div class="fabric-info">
+                <h3>Italian Wool</h3>
+                <p class="desc">Sleek, temperature-regulating, and luxurious. The ultimate material for Two-Piece and Safari suits.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <button class="back-btn" onclick="window.location.href='index.html'">Back to Home</button>
+
 </body>
 </html>
