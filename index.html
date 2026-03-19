@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MANSA STYLEZ | Premium Tailoring</title>
+<title>MHB CLOTHING | Premium Tailoring</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
 /* Global styles */
@@ -17,6 +17,52 @@ body {
 }
 
 a { text-decoration: none; color: inherit; }
+
+/* --- GLOWING LOADING SCREEN --- */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    /* The loader stays for 2.5 seconds, then fades out */
+    animation: fadeOut 0.8s forwards 2.5s; 
+    pointer-events: none;
+}
+
+.loader-brand {
+    font-size: 3.5em;
+    font-weight: 700;
+    color: #FFD700;
+    letter-spacing: 5px;
+    text-align: center;
+    line-height: 1.2;
+    /* This makes it glow and pulse */
+    animation: glowPulse 1s infinite alternate; 
+}
+
+@keyframes glowPulse {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+        transform: scale(0.98);
+    }
+    100% {
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 215, 0, 0.6);
+        transform: scale(1.05);
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
 
 /* Sticky Navigation Bar */
 nav {
@@ -34,7 +80,6 @@ nav {
     border-bottom: 1px solid #333;
 }
 
-/* Logo Image Styling - GOLD MAGIC TRICK APPLIED */
 nav .logo img {
     height: 70px;
     width: auto;
@@ -42,9 +87,18 @@ nav .logo img {
     mix-blend-mode: screen;
 }
 
+/* Scrollable Navigation Menu */
 nav .links {
     display: flex;
     gap: 20px;
+    overflow-x: auto;
+    white-space: nowrap; 
+    -webkit-overflow-scrolling: touch; 
+    scrollbar-width: none; 
+}
+
+nav .links::-webkit-scrollbar {
+    display: none;
 }
 
 nav .links a {
@@ -71,14 +125,16 @@ header {
     padding: 0 20px;
 }
 
-header h1, header p, header .btn-group {
+header h1, header p, header .btn-group, header .quick-links {
     opacity: 0;
     transform: translateY(20px);
-    animation: fadeInUp 1s forwards;
+    /* Delayed the hero animations so they wait for the loader to finish */
+    animation: fadeInUp 1s forwards 2.5s;
 }
 
-header p { animation-delay: 0.3s; }
-header .btn-group { animation-delay: 0.6s; margin-top: 20px;}
+header p { animation-delay: 2.8s; }
+header .btn-group { animation-delay: 3.1s; margin-top: 20px;}
+header .quick-links { animation-delay: 3.3s; margin-top: 15px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;}
 
 @keyframes fadeInUp {
     to {
@@ -134,6 +190,22 @@ button.outline-btn {
 button.outline-btn:hover {
     background-color: #FFD700;
     color: #000;
+}
+
+/* Highlight Buttons for visibility */
+button.highlight-btn {
+    background-color: rgba(255, 215, 0, 0.08);
+    color: #FFD700;
+    border: 2px solid #FFD700;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+    font-size: 1.15em;
+    letter-spacing: 1px;
+}
+
+button.highlight-btn:hover {
+    background-color: #FFD700;
+    color: #000;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
 }
 
 /* Sections */
@@ -288,15 +360,25 @@ footer {
 @media (max-width: 768px) {
     header h1 { font-size: 3em; }
     nav { flex-direction: column; padding: 10px; gap: 10px; }
-    nav .links { flex-wrap: wrap; justify-content: center; }
+    
+    nav .links { 
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: nowrap; 
+        padding-bottom: 5px;
+    }
 }
 </style>
 </head>
 <body>
 
+<div id="loader">
+    <div class="loader-brand">MHB<br>CLOTHING</div>
+</div>
+
 <nav>
     <div class="logo">
-        <a href="#"><img src="images/logo.jpg" alt="MANSA STYLEZ Logo"></a>
+        <a href="#"><img src="images/logo.jpg" alt="MHB CLOTHING Logo"></a>
     </div>
     <div class="links">
         <a href="#welcome">Welcome</a>
@@ -308,23 +390,29 @@ footer {
 </nav>
 
 <header>
-    <h1>MANSA STYLEZ</h1>
+    <h1>MHB CLOTHING</h1>
     <p>"... Be exclusive, be unique, be yourself"</p>
+    
     <div class="btn-group">
         <button onclick="window.location.href='order.html'">PLACE AN ORDER</button>
         <button class="outline-btn" onclick="document.getElementById('video-showcase').scrollIntoView({ behavior: 'smooth' });">Watch Our Craft</button>
+    </div>
+    
+    <div class="quick-links">
+        <button class="highlight-btn" onclick="window.location.href='page2.html'" style="padding: 10px 20px; font-size: 0.95em; margin: 5px;">🧵 TEXTILES</button>
+        <button class="highlight-btn" onclick="window.location.href='page3.html'" style="padding: 10px 20px; font-size: 0.95em; margin: 5px;">📋 PRICE LIST</button>
     </div>
 </header>
 
 <section id="welcome">
     <h2>Welcome to Elegance</h2>
-    <p>Welcome to MANSA STYLEZ. We believe that true elegance lies in the details. Whether you are dressing for a special occasion or elevating your everyday look, our bespoke tailoring is designed to reflect your unique personality and heritage. Step into a world of premium craftsmanship, clean finishing, and unmatched style.</p>
+    <p>Welcome to MHB CLOTHING. We believe that true elegance lies in the details. Whether you are dressing for a special occasion or elevating your everyday look, our bespoke tailoring is designed to reflect your unique personality and heritage. Step into a world of premium craftsmanship, clean finishing, and unmatched style.</p>
 </section>
 
 <section id="about">
     <h2>About Us</h2>
     <p class="subtitle">We specialize in sewing all types of Kaftan, Jallabiya, Trouser Suite, Senator, Jacket & Other Attires.</p>
-    <p style="max-width: 800px; margin: 0 auto; line-height: 1.6; color: #ccc;">MANSA STYLEZ focuses on achieving the perfect fit and creating stylish embroidery that sets you apart from the crowd. Every stitch is a testament to our dedication to quality and modern African menswear.</p>
+    <p style="max-width: 800px; margin: 0 auto; line-height: 1.6; color: #ccc;">MHB CLOTHING focuses on achieving the perfect fit and creating stylish embroidery that sets you apart from the crowd. Every stitch is a testament to our dedication to quality and modern African menswear.</p>
 </section>
 
 <section id="gallery">
@@ -338,17 +426,23 @@ footer {
         <img src="images/design6.jpg" alt="Tailored Design 6">
     </div>
     
-    <div style="margin-top: 40px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
-        <button onclick="window.location.href='order.html'" style="width: 100%; max-width: 300px; margin-bottom: 10px;">PLACE AN ORDER</button>
-        <div style="width: 100%;"></div> <button class="outline-btn" onclick="window.location.href='extra.html'">IN COLLABORATION WITH</button>
-        <button class="outline-btn" onclick="window.location.href='page2.html'">TEXTILES</button>
-        <button class="outline-btn" onclick="window.location.href='page3.html'">Price List</button>
+    <div style="margin-top: 40px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; align-items: center;">
+        <button onclick="window.location.href='order.html'" style="width: 100%; max-width: 300px; margin-bottom: 20px;">PLACE AN ORDER</button>
+        
+        <div style="width: 100%;"></div> 
+        
+        <button class="highlight-btn" onclick="window.location.href='page2.html'">🧵 TEXTILES</button>
+        <button class="highlight-btn" onclick="window.location.href='page3.html'">📋 PRICE LIST</button>
+        
+        <div style="width: 100%;"></div> 
+        
+        <button class="outline-btn" onclick="window.location.href='extra.html'">IN COLLABORATION WITH</button>
     </div>
 </section>
 
 <section id="video-showcase">
     <h2>Cinematic Showcase</h2>
-    <p class="subtitle">Experience the craftsmanship and elegance of MANSA STYLEZ in motion.</p>
+    <p class="subtitle">Experience the craftsmanship and elegance of MHB CLOTHING in motion.</p>
     <div class="video-wrapper">
         <video autoplay loop muted playsinline>
             <source src="images/promo.mp4" type="video/mp4">
@@ -372,14 +466,14 @@ footer {
     <div class="contact-info">
         <p>📍 <strong>Address:</strong> No. 85c Tarauni Kano State, Nigeria.</p>
         <p>📞 <strong>Call:</strong> <a href="tel:+2348125616443">08125616443</a></p>
-        <p>💬 <strong>WhatsApp:</strong> <a href="https://wa.me/2347068655149?text=Hi%20MANSA%20STYLEZ!%20I%20saw%20your%20website%20and%20I%20am%20interested%20in%20a%20custom%20fitting.">07068655149</a></p>
+        <p>💬 <strong>WhatsApp:</strong> <a href="https://wa.me/2347068655149?text=Hi%20MHB%20CLOTHING!%20I%20saw%20your%20website%20and%20I%20am%20interested%20in%20a%20custom%20fitting.">07068655149</a></p>
         <p>✉️ <strong>Email:</strong> <a href="mailto:mansursuleiman4@gmail.com">mansursuleiman4@gmail.com</a></p>
     </div>
-    <button class="whatsapp-btn" onclick="window.location.href='https://wa.me/2347068655149?text=Hi%20MANSA%20STYLEZ!%20I%20saw%20your%20website%20and%20I%20am%20interested%20in%20a%20custom%20fitting.'">Chat on WhatsApp</button>
+    <button class="whatsapp-btn" onclick="window.location.href='https://wa.me/2347068655149?text=Hi%20MHB%20CLOTHING!%20I%20saw%20your%20website%20and%20I%20am%20interested%20in%20a%20custom%20fitting.'">Chat on WhatsApp</button>
 </section>
 
 <footer>
-    <p>© 2026 MANSA STYLEZ. Be exclusive, be unique, be yourself. All Rights Reserved.</p>
+    <p>© 2026 MHB CLOTHING. Be exclusive, be unique, be yourself. All Rights Reserved.</p>
 </footer>
 
 <script>
