@@ -3,91 +3,239 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MANSA STYLEZ | Collections</title>
+<title>MHB CLOTHING | Price List</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-    body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: #000; color: #fff; text-align: center; padding: 50px 20px; }
-    h1 { color: #FFD700; margin-bottom: 10px; font-weight: 700; letter-spacing: 2px;}
-    p.subtitle { font-size: 1.1em; color: #ccc; max-width: 600px; margin: 0 auto 40px auto; line-height: 1.6; }
-    
-    /* Category Grid Layout */
-    .category-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 30px;
-        max-width: 1000px;
-        margin: 0 auto;
-    }
+/* Global styles */
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #000;
+    color: #fff;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
 
-    /* Category Cards that act as big buttons */
-    .category-card {
-        background-color: #0a0a0a;
-        border: 2px solid #333;
-        border-radius: 12px;
-        overflow: hidden;
-        cursor: pointer;
-        transition: transform 0.3s ease, border-color 0.3s ease;
-    }
+a { text-decoration: none; color: inherit; }
 
-    .category-card:hover {
-        transform: translateY(-5px);
-        border-color: #FFD700;
-        box-shadow: 0 10px 25px rgba(255, 215, 0, 0.2);
-    }
+/* Sticky Navigation Bar (Matching Homepage) */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    z-index: 1000;
+    box-sizing: border-box;
+    border-bottom: 1px solid #333;
+}
 
-    .category-card img {
-        width: 100%;
-        height: 300px;
-        object-fit: cover;
-        border-bottom: 2px solid #333;
-        transition: opacity 0.3s;
-    }
+nav .logo img {
+    height: 70px;
+    width: auto;
+    filter: invert(85%) sepia(50%) saturate(1000%) hue-rotate(350deg) brightness(110%);
+    mix-blend-mode: screen;
+}
 
-    .category-card:hover img { opacity: 0.8; }
+/* Scrollable Navigation Menu */
+nav .links {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    white-space: nowrap; 
+    -webkit-overflow-scrolling: touch; 
+    scrollbar-width: none; 
+}
 
-    .category-card h3 {
-        margin: 0;
-        padding: 20px;
-        color: #FFD700;
-        font-size: 1.5em;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-    }
+nav .links::-webkit-scrollbar {
+    display: none;
+}
 
-    .back-btn { background-color: transparent; color: #FFD700; border: 2px solid #FFD700; padding: 15px 35px; font-size: 1.1em; font-weight: 600; border-radius: 5px; cursor: pointer; margin-top: 50px; transition: 0.3s; }
-    .back-btn:hover { background-color: #FFD700; color: #000; }
+nav .links a {
+    font-size: 0.9em;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+nav .links a:hover {
+    color: #FFD700;
+}
+
+/* Page Header */
+.page-header {
+    padding: 120px 20px 40px 20px;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('images/hero.jpg') center/cover;
+    border-bottom: 2px solid #333;
+}
+
+.page-header h1 {
+    font-size: 3em;
+    color: #FFD700;
+    margin: 0;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.page-header p {
+    color: #ccc;
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Price Grid Section */
+.price-container {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.price-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.price-card {
+    background: #0a0a0a;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.price-card:hover {
+    border-color: #FFD700;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.15);
+}
+
+.price-card h3 {
+    font-size: 1.5em;
+    color: #fff;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.price-card .price {
+    font-size: 2.2em;
+    color: #FFD700;
+    font-weight: 700;
+    margin: 15px 0;
+}
+
+.price-card .desc {
+    color: #aaa;
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Buttons */
+button {
+    background-color: #FFD700;
+    color: #000;
+    border: none;
+    padding: 15px 35px;
+    font-size: 1em;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #e6c200;
+    transform: scale(1.02);
+}
+
+.back-btn {
+    background: transparent;
+    border: 2px solid #FFD700;
+    color: #FFD700;
+    width: auto;
+    margin-top: 50px;
+}
+
+.back-btn:hover {
+    background: #FFD700;
+    color: #000;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    nav { flex-direction: column; padding: 10px; gap: 10px; }
+    nav .links { width: 100%; justify-content: flex-start; flex-wrap: nowrap; padding-bottom: 5px; }
+    .page-header h1 { font-size: 2.2em; }
+}
 </style>
 </head>
 <body>
 
-    <h1>Our Collections</h1>
-    <p class="subtitle">Select a style below to view our exclusive designs and starting prices.</p>
+<nav>
+    <div class="logo">
+        <a href="index.html"><img src="images/logo.jpg" alt="MHB CLOTHING Logo"></a>
+    </div>
+    <div class="links">
+        <a href="index.html#welcome">Welcome</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#gallery">Designs</a>
+        <a href="index.html#video-showcase">Showcase</a>
+        <a href="index.html#contact">Contact</a>
+    </div>
+</nav>
 
-    <div class="category-grid">
+<div class="page-header">
+    <h1>Our Pricing</h1>
+    <p>Premium craftsmanship at competitive rates.</p>
+</div>
+
+<div class="price-container">
+    <div class="price-grid">
         
-        <div class="category-card" onclick="window.location.href='kaftan.html'">
-            <img src="images/design1.jpg" alt="Kaftans">
-            <h3>Kaftans</h3>
+        <div class="price-card">
+            <h3>Senator Attire</h3>
+            <p class="price">₦30,000+</p>
+            <p class="desc">Expertly tailored top and trousers with clean finishing. (Fabric not included).</p>
+            <button onclick="window.location.href='order.html'">Order Now</button>
         </div>
 
-        <div class="category-card" onclick="window.location.href='jallabiya.html'">
-            <img src="images/design3.jpg" alt="Jallabiya">
-            <h3>Jallabiya</h3>
+        <div class="price-card">
+            <h3>Kaftan</h3>
+            <p class="price">₦25,000+</p>
+            <p class="desc">Classic and elegant Kaftan designs with standard embroidery work.</p>
+            <button onclick="window.location.href='order.html'">Order Now</button>
         </div>
 
-        <div class="category-card" onclick="window.location.href='babban_riga.html'">
-            <img src="images/design4.jpg" alt="Babban Riga">
+        <div class="price-card">
             <h3>Babban Riga</h3>
+            <p class="price">₦50,000+</p>
+            <p class="desc">Grand, traditional three-piece setup with intricate luxury embroidery.</p>
+            <button onclick="window.location.href='order.html'">Order Now</button>
         </div>
 
-        <div class="category-card" onclick="window.location.href='senator.html'">
-            <img src="images/design2.jpg" alt="Senator Suits">
-            <h3>Senator Suits</h3>
+        <div class="price-card">
+            <h3>Two-Piece Suit</h3>
+            <p class="price">₦60,000+</p>
+            <p class="desc">Sharp, modern custom-fitted suits perfect for weddings and corporate events.</p>
+            <button onclick="window.location.href='order.html'">Order Now</button>
         </div>
 
     </div>
-
-    <button class="back-btn" onclick="window.location.href='index.html'">Go Back Home</button>
+    
+    <div style="text-align: center;">
+        <button class="back-btn" onclick="window.location.href='index.html'">Back to Home</button>
+    </div>
+</div>
 
 </body>
 </html>
