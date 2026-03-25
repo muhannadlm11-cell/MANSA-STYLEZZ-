@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MHB CLOTHING | Secure Login</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+    body {
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+        background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('images/hero.jpg') center/cover;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+    }
+
+    .login-container {
+        background: #0a0a0a;
+        border: 1px solid #333;
+        border-radius: 12px;
+        padding: 40px 30px;
+        width: 90%;
+        max-width: 400px;
+        text-align: center;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    }
+
+    .brand {
+        color: #FFD700;
+        font-size: 2em;
+        font-weight: 700;
+        letter-spacing: 2px;
+        margin-bottom: 5px;
+    }
+
+    .subtitle {
+        color: #aaa;
+        font-size: 0.9em;
+        margin-bottom: 30px;
+    }
+
+    /* Input Fields */
+    .input-group {
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    .input-group label {
+        display: block;
+        font-size: 0.85em;
+        color: #ccc;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .input-group input {
+        width: 100%;
+        padding: 15px;
+        background: #111;
+        border: 1px solid #333;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 1em;
+        box-sizing: border-box;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .input-group input:focus {
+        outline: none;
+        border-color: #FFD700;
+        box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+    }
+
+    /* OTP Boxes */
+    .otp-inputs {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .otp-inputs input {
+        width: 20%;
+        padding: 15px 0;
+        text-align: center;
+        font-size: 1.5em;
+        font-weight: 700;
+    }
+
+    /* Buttons */
+    .auth-btn {
+        width: 100%;
+        background-color: #FFD700;
+        color: #000;
+        border: none;
+        padding: 15px;
+        font-size: 1.1em;
+        font-weight: 700;
+        border-radius: 5px;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: 0.3s;
+    }
+
+    .auth-btn:hover {
+        background-color: #e6c200;
+        transform: scale(1.02);
+    }
+
+    .back-link {
+        display: block;
+        margin-top: 20px;
+        color: #FFD700;
+        font-size: 0.85em;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    .back-link:hover { text-decoration: underline; }
+
+    /* Hide the OTP section initially */
+    #otp-section { display: none; }
+
+</style>
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="brand">MHB</div>
+        <div class="subtitle">Client Portal Login</div>
+
+        <div id="phone-section">
+            <div class="input-group">
+                <label>Phone Number</label>
+                <input type="tel" id="phoneNumber" placeholder="e.g. 0812 345 6789" required>
+            </div>
+            <button class="auth-btn" onclick="sendOTP()">Send OTP Code</button>
+        </div>
+
+        <div id="otp-section">
+            <p style="color: #aaa; font-size: 0.85em; margin-bottom: 15px;">Enter the 4-digit code sent to your phone.</p>
+            
+            <div class="otp-inputs">
+                <input type="text" maxlength="1" onkeyup="moveToNext(this, 'otp2')">
+                <input type="text" maxlength="1" id="otp2" onkeyup="moveToNext(this, 'otp3')">
+                <input type="text" maxlength="1" id="otp3" onkeyup="moveToNext(this, 'otp4')">
+                <input type="text" maxlength="1" id="otp4">
+            </div>
+
+            <button class="auth-btn" onclick="verifyLogin()">Verify & Login</button>
+        </div>
+
+        <a href="index.html" class="back-link">← Back to Store</a>
+    </div>
+
+    <script>
+        // JavaScript to make the page interactive
+        function sendOTP() {
+            var phone = document.getElementById('phoneNumber').value;
+            if(phone.length > 5) {
+                // Hide phone section, show OTP section
+                document.getElementById('phone-section').style.display = 'none';
+                document.getElementById('otp-section').style.display = 'block';
+            } else {
+                alert("Please enter a valid phone number.");
+            }
+        }
+
+        function moveToNext(current, nextFieldID) {
+            if (current.value.length >= 1) {
+                document.getElementById(nextFieldID).focus();
+            }
+        }
+
+        function verifyLogin() {
+            // Simulating a successful login
+            alert("Login Successful! Welcome to MHB CLOTHING.");
+            window.location.href = 'index.html'; // Sends them back to the homepage
+        }
+    </script>
+
+</body>
+</html>
