@@ -30,7 +30,6 @@ a { text-decoration: none; color: inherit; }
     justify-content: center;
     align-items: center;
     z-index: 99999;
-    /* The loader stays for 2.5 seconds, then fades out */
     animation: fadeOut 0.8s forwards 2.5s; 
     pointer-events: none;
 }
@@ -42,7 +41,6 @@ a { text-decoration: none; color: inherit; }
     letter-spacing: 5px;
     text-align: center;
     line-height: 1.2;
-    /* This makes it glow and pulse */
     animation: glowPulse 1s infinite alternate; 
 }
 
@@ -128,7 +126,6 @@ header {
 header h1, header p, header .btn-group, header .quick-links {
     opacity: 0;
     transform: translateY(20px);
-    /* Delayed the hero animations so they wait for the loader to finish */
     animation: fadeInUp 1s forwards 2.5s;
 }
 
@@ -386,6 +383,7 @@ footer {
         <a href="#gallery">Designs</a>
         <a href="#video-showcase">Showcase</a>
         <a href="#contact">Contact</a>
+        <a href="login.html" style="color: #FFD700; padding-left: 10px;">LOGIN</a>
     </div>
 </nav>
 
