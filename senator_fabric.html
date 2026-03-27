@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MHB CLOTHING | Senator Material Collection</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+    /* Using the same CSS from your Atiku page for consistency */
+    body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: #000; color: #fff; text-align: center; padding: 40px 10px; }
+    h1 { color: #FFD700; margin-bottom: 5px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;}
+    .price-sub { color: #888; margin-bottom: 40px; font-size: 0.9em; letter-spacing: 1px; }
+
+    .textile-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+
+    .textile-item {
+        display: flex;
+        align-items: center;
+        background-color: #0a0a0a;
+        border: 1px solid #333;
+        border-radius: 10px;
+        padding: 15px;
+        text-align: left;
+        transition: 0.3s;
+    }
+
+    .textile-item:hover { border-color: #FFD700; background-color: #111; }
+
+    .textile-item img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-right: 20px;
+        border: 1px solid #444;
+    }
+
+    .textile-info { flex-grow: 1; }
+    .textile-info h3 { margin: 0; font-size: 1.2em; color: #FFD700; }
+    .textile-info p { margin: 5px 0; color: #ccc; font-size: 0.9em; }
+    .price-tag { font-weight: 700; color: #fff; font-size: 1.1em; }
+
+    .order-btn-small {
+        background-color: #FFD700;
+        color: #000;
+        padding: 10px 15px;
+        border-radius: 5px;
+        font-weight: 700;
+        font-size: 0.8em;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+    }
+
+    .back-link { display: inline-block; margin-top: 40px; color: #888; text-decoration: none; font-size: 0.9em; border-bottom: 1px solid #444; padding-bottom: 2px; }
+    .back-link:hover { color: #FFD700; border-color: #FFD700; }
+
+    @media (max-width: 600px) {
+        .textile-item { flex-direction: column; text-align: center; }
+        .textile-item img { margin-right: 0; margin-bottom: 15px; width: 100%; height: 180px; }
+        .order-btn-small { width: 100%; margin-top: 15px; }
+    }
+</style>
+</head>
+<body>
+
+    <h1>Senator Materials</h1>
+    <p class="price-sub">DURABLE • STYLISH • EASY WASH</p>
+
+    <div class="textile-list">
+        
+        <div class="textile-item">
+            <img src="images/senator_black.jpg" alt="Plain Black Senator">
+            <div class="textile-info">
+                <h3>Executive Black Senator</h3>
+                <p>Solid color for a sharp, bold look</p>
+                <div class="price-tag">₦8,000 / 4 Yards</div>
+            </div>
+            <button class="order-btn-small" onclick="window.location.href='https://wa.me/2347068655149?text=I%20want%20to%20order%20the%20Executive%20Black%20Senator%20Material'">Order</button>
+        </div>
+
+        <div class="textile-item">
+            <img src="images/senator_blue.jpg" alt="Royal Blue Senator">
+            <div class="textile-info">
+                <h3>Royal Blue Senator</h3>
+                <p>Vibrant shade for traditional outings</p>
+                <div class="price-tag">₦8,500 / 4 Yards</div>
+            </div>
+            <button class="order-btn-small" onclick="window.location.href='https://wa.me/2347068655149?text=I%20want%20to%20order%20the%20Royal%20Blue%20Senator%20Material'">Order</button>
+        </div>
+
+        <div class="textile-item">
+            <img src="images/senator_grey.jpg" alt="Ash Grey Senator">
+            <div class="textile-info">
+                <h3>Ash Grey Senator</h3>
+                <p>Perfect for corporate-traditional mix</p>
+                <div class="price-tag">₦7,500 / 4 Yards</div>
+            </div>
+            <button class="order-btn-small" onclick="window.location.href='https://wa.me/2347068655149?text=I%20want%20to%20order%20the%20Ash%20Grey%20Senator%20Material'">Order</button>
+        </div>
+
+        <div class="textile-item">
+            <img src="images/senator_wine.jpg" alt="Wine Red Senator">
+            <div class="textile-info">
+                <h3>Wine Red Senator</h3>
+                <p>Deep, rich color for evening events</p>
+                <div class="price-tag">₦9,000 / 4 Yards</div>
+            </div>
+            <button class="order-btn-small" onclick="window.location.href='https://wa.me/2347068655149?text=I%20want%20to%20order%20the%20Wine%20Red%20Senator%20Material'">Order</button>
+        </div>
+
+        <div class="textile-item">
+            <img src="images/senator_green.jpg" alt="Forest Green Senator">
+            <div class="textile-info">
+                <h3>Forest Green Senator</h3>
+                <p>Unique earth-toned high quality fabric</p>
+                <div class="price-tag">₦8,500 / 4 Yards</div>
+            </div>
+            <button class="order-btn-small" onclick="window.location.href='https://wa.me/2347068655149?text=I%20want%20to%20order%20the%20Forest%20Green%20Senator%20Material'">Order</button>
+        </div>
+
+    </div>
+
+    <a href="page2.html" class="back-link">← Back to Textiles</a>
+
+</body>
+                  </html>
+                  
